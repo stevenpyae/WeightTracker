@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b686ddd7-301d-4b72-95b8-892bef78d5f4" name="Changes" comment="Testing COmmit">
-      <change afterPath="$PROJECT_DIR$/ImageAnalysis/AnalyseImage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sample Image.jpg" afterDir="false" />
+    <list default="true" id="b686ddd7-301d-4b72-95b8-892bef78d5f4" name="Changes" comment="Image Analysis code, initial commmit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageAnalysis/AnalyseImage.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageAnalysis/AnalyseImage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +40,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Steven\Desktop\DataScience\WeightTracker\ImageAnalysis" />
       <recent name="C:\Users\Steven\Desktop\DataScience\WeightTracker" />
     </key>
   </component>
@@ -90,7 +91,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705647289034</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Image Analysis code, initial commmit">
+      <option name="closed" value="true" />
+      <created>1706281102557</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706281102557</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +118,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="added .env file, Needed to use ChatGPT for it&#10;ConnectToTelegram.py tried OOP Methods using ChatGPT." />
     <MESSAGE value="Testing COmmit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing COmmit" />
+    <MESSAGE value="Image Analysis code, initial commmit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Image Analysis code, initial commmit" />
   </component>
 </project>
