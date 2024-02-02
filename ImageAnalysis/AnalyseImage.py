@@ -36,15 +36,13 @@ weight_text = pytesseract.image_to_string(filtered_img_for_weight)
 
 print(weight_text)
 
-'''
-date_text = pytesseract.image_to_string(extract_date)
+date_text = pytesseract.image_to_string(filtered_img_for_date)
 
 matches = re.findall(date_pattern, date_text)
 
 for match in matches:
     print(match)
 
-cv2.waitKey(0)'''
 
 matches = re.findall(weight_pattern, weight_text)
 
