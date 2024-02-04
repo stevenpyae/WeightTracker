@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b686ddd7-301d-4b72-95b8-892bef78d5f4" name="Changes" comment="Extracting Date method">
+    <list default="true" id="b686ddd7-301d-4b72-95b8-892bef78d5f4" name="Changes" comment="Need to clean up later">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageAnalysis/AnalyseImage.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageAnalysis/AnalyseImage.py" afterDir="false" />
     </list>
@@ -23,6 +23,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -36,17 +39,14 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Steven\Desktop\DataScience\WeightTracker\ImageAnalysis" />
       <recent name="C:\Users\Steven\Desktop\DataScience\WeightTracker" />
     </key>
   </component>
@@ -83,39 +83,7 @@
       <option name="project" value="LOCAL" />
       <updated>1705507261847</updated>
     </task>
-    <task id="LOCAL-00004" summary="Testing COmmit">
-      <option name="closed" value="true" />
-      <created>1705647289034</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1705647289034</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Image Analysis code, initial commmit">
-      <option name="closed" value="true" />
-      <created>1706281102557</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1706281102557</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Trying out different filters for tesseract to read">
-      <option name="closed" value="true" />
-      <created>1706799002303</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1706799002303</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Extracting Date method">
-      <option name="closed" value="true" />
-      <created>1706839335374</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1706839335374</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,13 +98,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="added .env file, Needed to use ChatGPT for it&#10;ConnectToTelegram.py tried OOP Methods using ChatGPT." />
-    <MESSAGE value="Testing COmmit" />
-    <MESSAGE value="Image Analysis code, initial commmit" />
-    <MESSAGE value="Trying out different filters for tesseract to read" />
-    <MESSAGE value="Extracting Date method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extracting Date method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added .env file, Needed to use ChatGPT for it&#10;ConnectToTelegram.py tried OOP Methods using ChatGPT." />
   </component>
 </project>
