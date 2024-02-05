@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b686ddd7-301d-4b72-95b8-892bef78d5f4" name="Changes" comment="Need to clean up later">
+    <list default="true" id="b686ddd7-301d-4b72-95b8-892bef78d5f4" name="Changes" comment="Unsuccessful attempt at extracting BodyFatPercentage. Need to try a new method">
+      <change afterPath="$PROJECT_DIR$/ImageAnalysis/FindBFP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageAnalysis/AnalyseImage.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageAnalysis/AnalyseImage.py" afterDir="false" />
     </list>
@@ -21,6 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -83,7 +85,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705507261847</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Unsuccessful attempt at extracting BodyFatPercentage. Need to try a new method">
+      <option name="closed" value="true" />
+      <created>1707058558579</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707058558579</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,6 +110,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="added .env file, Needed to use ChatGPT for it&#10;ConnectToTelegram.py tried OOP Methods using ChatGPT." />
-    <option name="LAST_COMMIT_MESSAGE" value="added .env file, Needed to use ChatGPT for it&#10;ConnectToTelegram.py tried OOP Methods using ChatGPT." />
+    <MESSAGE value="Unsuccessful attempt at extracting BodyFatPercentage. Need to try a new method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unsuccessful attempt at extracting BodyFatPercentage. Need to try a new method" />
   </component>
 </project>

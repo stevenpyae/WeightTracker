@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 import pytesseract
 import re
 
@@ -12,6 +13,8 @@ blur = cv2.GaussianBlur(img, (5, 5), 0)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 blur_gray = cv2.cvtColor(blur, cv2.COLOR_BGR2GRAY)
 inverted_gray = cv2.bitwise_not(gray)
+
+gaussain_blur = cv2.GaussianBlur(gray, (3,3), 0, 0, cv2.BORDER_DEFAULT)
 
 '''Finding the perfect filter to get the details out of the photo'''
 # Apply Histogram Equalized technique
@@ -31,8 +34,8 @@ filtered_img_for_weight = cv2.adaptiveThreshold(inverted_gray, 255, cv2.ADAPTIVE
                                                 15,
                                                 8)  # This is to extract weight
 
-filtered_img_for_bfp = cv2.adaptiveThreshold(blur_gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 5,
-                                             3)  # This is to extract body fat percentage
+filtered_img_for_bfp = cv2.adaptiveThreshold(gaussain_blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 17,
+                                            9)  # This is to extract body fat percentage
 
 # Displays
 
@@ -58,6 +61,8 @@ filtered_img_for_bfp = cv2.adaptiveThreshold(blur_gray, 255, cv2.ADAPTIVE_THRESH
 # for match in matches:
 #     print(match + 'kg')
 # de comment end
+
+
 
 cv2.imshow("Image Test", filtered_img_for_bfp)
 
