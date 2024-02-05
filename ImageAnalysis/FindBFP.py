@@ -19,6 +19,7 @@ filtered_img_for_bfp = cv2.adaptiveThreshold(gaussian_blur, 255, cv2.ADAPTIVE_TH
                                              9)  # This is to extract body fat percentage
 
 
+
 cv2.imshow("Image Test", filtered_img_for_bfp)
 
 bfp_text = pytesseract.image_to_string(filtered_img_for_bfp)
