@@ -13,3 +13,8 @@ Telegram Bot - https://www.freecodecamp.org/news/how-to-create-a-telegram-bot-us
 Tesseract Installation - https://github.com/UB-Mannheim/tesseract/wiki
 
 ChatGPT for code cleanup
+
+
+Challenges: 
+Retrieving Body Fat Percentage : 
+Tutorials followed: https://pyimagesearch.com/2015/03/09/capturing-mouse-click-events-with-python-and-opencv/
