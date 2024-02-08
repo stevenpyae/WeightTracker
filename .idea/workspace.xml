@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b686ddd7-301d-4b72-95b8-892bef78d5f4" name="Changes" comment="Unsuccessful attempt at extracting BodyFatPercentage. Need to try a new method">
-      <change afterPath="$PROJECT_DIR$/ImageAnalysis/FindBFP.py" afterDir="false" />
+    <list default="true" id="b686ddd7-301d-4b72-95b8-892bef78d5f4" name="Changes" comment="Followed image search tutorials to hardcode the area that we want to crop">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ImageAnalysis/AnalyseImage.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageAnalysis/AnalyseImage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageAnalysis/FindBFP.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageAnalysis/FindBFP.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +111,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="added .env file, Needed to use ChatGPT for it&#10;ConnectToTelegram.py tried OOP Methods using ChatGPT." />
     <MESSAGE value="Unsuccessful attempt at extracting BodyFatPercentage. Need to try a new method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unsuccessful attempt at extracting BodyFatPercentage. Need to try a new method" />
+    <MESSAGE value="Followed image search tutorials to hardcode the area that we want to crop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Followed image search tutorials to hardcode the area that we want to crop" />
   </component>
 </project>
