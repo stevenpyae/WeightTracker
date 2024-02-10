@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b686ddd7-301d-4b72-95b8-892bef78d5f4" name="Changes" comment="Followed image search tutorials to hardcode the area that we want to crop">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_2_2024_6_00_pm_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_2_2024_6_00_pm__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+    <list default="true" id="b686ddd7-301d-4b72-95b8-892bef78d5f4" name="Changes" comment="Clean up and reformatting">
+      <change afterPath="$PROJECT_DIR$/ImageAnalysis/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageAnalysis/FindBFP.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageAnalysis/FindBFP.py" afterDir="false" />
     </list>
@@ -104,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707411216526</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Clean up and reformatting">
+      <option name="closed" value="true" />
+      <created>1707559279681</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707559279681</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +128,7 @@
     <MESSAGE value="added .env file, Needed to use ChatGPT for it&#10;ConnectToTelegram.py tried OOP Methods using ChatGPT." />
     <MESSAGE value="Unsuccessful attempt at extracting BodyFatPercentage. Need to try a new method" />
     <MESSAGE value="Followed image search tutorials to hardcode the area that we want to crop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Followed image search tutorials to hardcode the area that we want to crop" />
+    <MESSAGE value="Clean up and reformatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean up and reformatting" />
   </component>
 </project>
