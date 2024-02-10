@@ -24,25 +24,6 @@ def load_crop_positions():
         return None
 
 
-# Main function
-def get_body_fat_percentage():
-    # Load crop positions
-    crop_positions = load_crop_positions()
-
-    if crop_positions:
-        print("Crop positions loaded:", crop_positions)
-    else:
-        print("No crop positions found.")
-
-    # Simulate setting crop positions
-
-    crop_positions = get_crop_positions()
-
-    # Save crop positions
-    save_crop_positions(crop_positions)
-    print("Crop positions saved:", crop_positions)
-
-
 def capture_mouse_clicks(event, x, y, flags, param):
     # to store coordinate and keep track of if we are cropping or not
     global coordinates, cropping
@@ -58,7 +39,6 @@ def capture_mouse_clicks(event, x, y, flags, param):
 
 def get_crop_positions(image_to_crop):
     global coordinates
-    clone = image_to_crop.copy()
 
     cv2.namedWindow("image_to_crop")
     cv2.setMouseCallback("image_to_crop", capture_mouse_clicks)
@@ -76,7 +56,24 @@ def get_crop_positions(image_to_crop):
             break
 
     if len(coordinates) == 2:
-        print(coordinates)
+        return coordinates
+
+
+# Main function
+def get_body_fat_percentage(image):
+    # Load crop positions
+    crop_positions = load_crop_positions()
+
+    if crop_positions:
+        print("Crop positions loaded:", crop_positions)
+    else:
+        print("No crop positions found.")
+
+    # Simulate setting crop positions
+    crop_positions = get_crop_positions(image)
+    # Save crop positions
+    save_crop_positions(crop_positions)
+    print("Crop positions saved:", crop_positions)
 
 
 get_crop_positions(cv2.imread("Sample Image.jpg"))
