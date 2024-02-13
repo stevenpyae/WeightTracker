@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b686ddd7-301d-4b72-95b8-892bef78d5f4" name="Changes" comment="Clean up and reformatting">
-      <change afterPath="$PROJECT_DIR$/ImageAnalysis/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageAnalysis/AnalyseImage.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageAnalysis/AnalyseImage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageAnalysis/FindBFP.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageAnalysis/FindBFP.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

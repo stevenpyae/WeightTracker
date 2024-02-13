@@ -15,22 +15,6 @@ resize_dimensions = (width, height)
 print(resize_dimensions)
 
 
-# Function to save crop positions to a file
-def save_crop_positions(positions):
-    with open('crop_positions.json', 'w') as file:
-        json.dump(positions, file)
-
-
-# Function to retrieve crop positions from the file
-def load_crop_positions():
-    try:
-        with open('crop_positions.json', 'r') as file:
-            positions = json.load(file)
-        return positions
-    except FileNotFoundError:
-        return None
-
-
 def capture_mouse_clicks(event, x, y, flags, param):
     # to store coordinate and keep track of if we are cropping or not
     global coordinates, cropping
@@ -44,9 +28,9 @@ def capture_mouse_clicks(event, x, y, flags, param):
         cropping = False
 
 
-def get_crop_positions(image_to_crop):
+def get_crop_positions_from_image(image_to_crop):
     global coordinates, resize_dimensions
-
+    # instantiate the name to crop the images
     cv2.namedWindow("image_to_crop")
     cv2.setMouseCallback("image_to_crop", capture_mouse_clicks)
 
@@ -72,19 +56,35 @@ def get_crop_positions(image_to_crop):
         pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract'
 
         gray = cv2.cvtColor(cropped_img, cv2.COLOR_BGR2GRAY)
-        gaussian_blur = cv2.GaussianBlur(gray, (3, 3), 0, 0, cv2.BORDER_DEFAULT)
+        gaussian_blur = cv2.GaussianBlur(gray, (5, 5), 0, 0, cv2.BORDER_DEFAULT)
 
-        filtered_img_for_bfp = cv2.adaptiveThreshold(gaussian_blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-                                                     cv2.THRESH_BINARY,
-                                                     15, 8)  # This is to extract body fat percentage
+        for i in range(8, 14):
+            filtered_img_for_bfp = cv2.adaptiveThreshold(gaussian_blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                                         cv2.THRESH_BINARY,
+                                                         15, i)  # This is to extract body fat percentage
 
-        cv2.imshow("Cropped_image", filtered_img_for_bfp)
-        print("Analysing Text")
-        bfp_text = pytesseract.image_to_string(filtered_img_for_bfp)
+            print(f"Analysing Text for i = {i}")
+            bfp_text = pytesseract.image_to_string(filtered_img_for_bfp)
+            print(bfp_text)
 
-        print(bfp_text)
         cv2.waitKey(0)
         return coordinates
+
+
+# Function to save crop positions to a file
+def save_crop_positions(positions):
+    with open('crop_positions.json', 'w') as file:
+        json.dump(positions, file)
+
+
+# Function to retrieve crop positions from the file
+def load_crop_positions():
+    try:
+        with open('crop_positions.json', 'r') as file:
+            positions = json.load(file)
+        return positions
+    except FileNotFoundError:
+        return None
 
 
 # Main function
@@ -98,7 +98,7 @@ def get_body_fat_percentage(image):
     else:
         print("No crop positions found.")
         # Simulate setting crop positions
-        crop_positions = get_crop_positions(image)
+        crop_positions = get_crop_positions_from_image(image)
         # Save crop positions
         save_crop_positions(crop_positions)
 
@@ -114,7 +114,7 @@ def get_body_fat_percentage(image):
     # Process the cropped_img to extract the body fat percentage
 
 
-get_crop_positions(cv2.imread("Sample Image.jpg"))
+get_crop_positions_from_image(cv2.imread("Sample Image.jpg"))
 
 #
 #
