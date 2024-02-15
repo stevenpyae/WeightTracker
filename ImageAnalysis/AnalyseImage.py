@@ -3,9 +3,11 @@ import numpy as np
 import pytesseract
 import re
 
+# importing Image to Text Service
+from ImageToTextService import TesseractService
+
 date_pattern = r"\b\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2} [AP]M\b"
 weight_pattern = r"Weight: (\d+\.\d+)kg"
-
 
 pytesseract.pytesseract.tesseract_cmd = ('C:/Program Files/Tesseract-OCR/tesseract')
 
@@ -32,10 +34,10 @@ equalise_for_bfp = cv2.equalizeHist(cv2.cvtColor(blur, cv2.COLOR_BGR2GRAY))
 filtered_img_for_date = cv2.adaptiveThreshold(inverted_gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 15,
                                               9)  # This is to extract the date
 
-
 filtered_img_for_weight = cv2.adaptiveThreshold(inverted_gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,
                                                 15,
                                                 8)  # This is to extract weight
+
 
 # Displays
 
@@ -45,19 +47,33 @@ filtered_img_for_weight = cv2.adaptiveThreshold(inverted_gray, 255, cv2.ADAPTIVE
 # cv2.imshow('Adaptive Gaussian', filtered_img_for_bfp)
 #
 # need to de-comment start
-weight_text = pytesseract.image_to_string(filtered_img_for_weight)
 
-date_text = pytesseract.image_to_string(filtered_img_for_date)
+#
+# weight_text = pytesseract.image_to_string(filtered_img_for_weight)
+#
+# date_text = pytesseract.image_to_string(filtered_img_for_date)
+#
+# matches = re.findall(date_pattern, date_text)
+#
+# for match in matches:
+#     print(match)
+#
+# matches = re.findall(weight_pattern, weight_text)
+#
+# for match in matches:
+#     print(match + 'kg')
+#
+# cv2.waitKey(0)
 
-matches = re.findall(date_pattern, date_text)
+def analyse_image(image):
+    convert_service = TesseractService()
 
-for match in matches:
-    print(match)
+    weight_text = convert_service.convert_to_text(image)
+
+    matches = re.findall(weight_pattern, weight_text)
+
+    for match in matches:
+        print(match + 'kg')
 
 
-matches = re.findall(weight_pattern, weight_text)
-
-for match in matches:
-    print(match + 'kg')
-
-cv2.waitKey(0)
+analyse_image(filtered_img_for_weight)
