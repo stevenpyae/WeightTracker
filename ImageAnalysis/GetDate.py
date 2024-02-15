@@ -1,7 +1,8 @@
-"""This function will return the text while """
+"""This function will return the date when received an image"""
 
 from ImageToTextService import TesseractService
 import re
+from datetime import datetime
 
 
 def get_date_from_image(image):
@@ -15,5 +16,14 @@ def get_date_from_image(image):
 
     print(matches)
     for match in matches:
-        if re.match(date_pattern,match):
+        # Check if the match is in the correct format
+        try:
+            # Attempt to parse the match as a datetime object
+            parsed_date = datetime.strptime(match, "%d-%m-%Y %I:%M:%S %p")
+            # If parsing succeeds, return the valid date format
             return match
+        except ValueError:
+            # If parsing fails, continue to the next match
+            pass
+
+    return None
