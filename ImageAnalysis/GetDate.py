@@ -1,14 +1,11 @@
 """This function will return the date when received an image"""
 
-from ImageToTextService import TesseractService
 import re
 from datetime import datetime
 
 
-def get_date_from_image(image):
+def get_date_from_image(image, convert_service):
     date_pattern = r"\b\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2} [AP]M\b"
-
-    convert_service = TesseractService()
 
     extracted_text = convert_service.convert_to_text(image)
 
