@@ -12,13 +12,7 @@ def get_weight_from_image(image, convert_service):
     print(matches)
     for match in matches:
         # Check if the match is in the correct format
-        try:
-            # Attempt to parse the match as a weight object
-            parsed_date = datetime.strptime(match, "%d-%m-%Y %I:%M:%S %p")
-            # If parsing succeeds, return the valid date format
+        if re.match(weight_pattern, match):
             return match
-        except ValueError:
-            # If parsing fails, continue to the next match
-            pass
 
     return None
