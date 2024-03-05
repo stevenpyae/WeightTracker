@@ -5,6 +5,7 @@ import re
 
 # importing Image to Text Service
 from ImageToTextService import TesseractService
+from GetDate import get_date_from_image
 
 date_pattern = r"\b\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2} [AP]M\b"
 weight_pattern = r"Weight: (\d+\.\d+)kg"
@@ -67,13 +68,12 @@ filtered_img_for_weight = cv2.adaptiveThreshold(inverted_gray, 255, cv2.ADAPTIVE
 
 def analyse_image(image):
     convert_service = TesseractService()
+    extracted_date = get_date_from_image(image, convert_service)
 
-    weight_text = convert_service.convert_to_text(image)
-
-    matches = re.findall(weight_pattern, weight_text)
-
-    for match in matches:
-        print(match + 'kg')
+    if extracted_date:
+        print(extracted_date)
+    else:
+        print("No Date")
 
 
-analyse_image(filtered_img_for_weight)
+analyse_image(filtered_img_for_date)

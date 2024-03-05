@@ -3,6 +3,7 @@ import json  # Json for saving crop locations
 import os  # getting .env file for resize file
 from dotenv import load_dotenv  # load the env file for resizing
 import pytesseract
+import re
 
 load_dotenv()
 coordinates = []
@@ -66,21 +67,33 @@ def get_crop_positions_from_image(image_to_crop):
             break
 
     if len(coordinates) == 2:
-        print(coordinates)
+        # Start of Test
+        bfp_pattern = r"\b\d{1,2}\.\d\b"
         cropped_img = image_to_crop_resize[coordinates[0][1]:coordinates[1][1], coordinates[0][0]:coordinates[1][0]]
         pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract'
 
         gray = cv2.cvtColor(cropped_img, cv2.COLOR_BGR2GRAY)
         gaussian_blur = cv2.GaussianBlur(gray, (5, 5), 0, 0, cv2.BORDER_DEFAULT)
 
-        for i in range(8, 14):
-            filtered_img_for_bfp = cv2.adaptiveThreshold(gaussian_blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-                                                         cv2.THRESH_BINARY,
-                                                         15, i)  # This is to extract body fat percentage
+        for i in range(3, 14):
+            try:
+                filtered_img_for_bfp = cv2.adaptiveThreshold(gaussian_blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                                             cv2.THRESH_BINARY,
+                                                             15, i)  # This is to extract body fat percentage
 
-            print(f"Analysing Text for i = {i}")
-            bfp_text = pytesseract.image_to_string(filtered_img_for_bfp)
-            print(bfp_text)
+                print(f"Analysing Text for i = {i}")
+                bfp_text = pytesseract.image_to_string(filtered_img_for_bfp)
+                print(bfp_text)
+                matches = re.search(bfp_pattern, bfp_text)
+                if matches:
+                    print('I found matches')
+                    number = float(matches.group())
+                    if 15.0 <= number <= 30.0:
+                        print("Found number:", number)
+                        break
+                    else:
+                        print("Number is not between 15.0 and 30.0")
+            except ValueError:
+                pass
+        # End of test
 
-        cv2.waitKey(0)
-        return coordinates
