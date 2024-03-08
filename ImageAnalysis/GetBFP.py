@@ -71,4 +71,4 @@ def get_body_fat_percentage(image, convert_service):
 #bfp_number = get_body_fat_percentage(cv2.imread("Sample Image.jpg"))
 #print(f"Body Fat Percentage: {bfp_number}")
 
-# SaveLoadPositions.get_crop_positions_from_image(cv2.imread("Sample Image.jpg"))
+#SaveLoadPositions.get_crop_positions_from_image(cv2.imread("Sample Image.jpg"))
