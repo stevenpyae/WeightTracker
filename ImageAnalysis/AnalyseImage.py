@@ -1,7 +1,4 @@
 import cv2
-import numpy as np
-import pytesseract
-import re
 
 # importing Image to Text Service
 from ImageToTextService import TesseractService
@@ -18,15 +15,11 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 blur_gray = cv2.cvtColor(blur, cv2.COLOR_BGR2GRAY)
 inverted_gray = cv2.bitwise_not(gray)
 
-gaussain_blur = cv2.GaussianBlur(gray, (3, 3), 0, 0, cv2.BORDER_DEFAULT)
-
 '''Finding the perfect filter to get the details out of the photo'''
 # Apply Histogram Equalized technique
 equalise_for_date = cv2.equalizeHist(inverted_gray)
 
 equalise_for_weight = cv2.equalizeHist(gray)
-
-equalise_for_bfp = cv2.equalizeHist(cv2.cvtColor(blur, cv2.COLOR_BGR2GRAY))
 
 # Apply Adaptive Mean thresholding
 filtered_img_for_date = cv2.adaptiveThreshold(inverted_gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 15,
@@ -47,4 +40,4 @@ def analyse_image(image):
         print("No Date")
 
 
-analyse_image(filtered_img_for_weight)
+analyse_image(img)
