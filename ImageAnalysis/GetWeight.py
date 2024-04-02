@@ -15,11 +15,10 @@ def filter_image_for_weight(image):
 
 def get_weight_from_image(image, convert_service):
     weight_pattern = r"Weight: (\d+\.\d+)kg"
-
+    # Filter Image for weight & Convert to Text
     extracted_text = convert_service.convert_to_text(filter_image_for_weight(image))
 
     matches = re.findall(weight_pattern, extracted_text)
-    print(matches)
     # if weight pattern is found, return as float
     try:
         if matches:
